@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>写给我的诺诺</title>
+	    
+        <link type="text/css" rel="stylesheet" href="./index_files/default.css">
+		<script type="text/javascript" src="./index_files/jquery.min.js"></script>
+		<script type="text/javascript" src="./index_files/jscex.min.js"></script>
+		<script type="text/javascript" src="./index_files/jscex-parser.js"></script>
+		<script type="text/javascript" src="./index_files/jscex-jit.js"></script>
+		<script type="text/javascript" src="./index_files/jscex-builderbase.min.js"></script>
+		<script type="text/javascript" src="./index_files/jscex-async.min.js"></script>
+		<script type="text/javascript" src="./index_files/jscex-async-powerpack.min.js"></script>
+		<script type="text/javascript" src="./index_files/functions.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./index_files/love.js" charset="utf-8"></script>
+	    <style type="text/css">
+<!--
+.STYLE1 {color: #666666}
+
+-->
+        </style>
+        <style>
+    /* 按钮样式 */
+    #floatingButton {
+        position: fixed;
+        bottom: 95px; /* 初始位置，可根据需要调整 */
+        right: 180px; /* 初始位置，可根据需要调整 */
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #like {
+        position: fixed;
+        bottom: 95px; /* 初始位置，可根据需要调整 */
+        right: 110px; /* 初始位置，可根据需要调整 */
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family:'Lato', sans-serif;
+    }
+    #nuo {  
+        font-family:'Lato', sans-serif;
+        margin-left: 1236px;
+        padding: 10px;
+        position: relative; /* 设置为相对定位 */
+        top: -146px; /* 上移20像素 */
+        font-family: "Arial"; /* 设置字体 */
+        font-size: 26px;
+    }
+
+</style>
+</head>
+    <body>
+        <div id="main">
+            <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
+            <div id="wrap">
+                <div id="text">
+			        <div id="code">
+			        	<span class="say">亲爱的诺诺：</span><br>
+			        	<span class="say">想必这样的表白方式你是第一次收到吧</span><br>
+                        <span class="say">有很多话想和你说，提起笔来思绪万千，每句话都斟酌又斟酌，写了又改，改了又删</span><br>
+                        <span class="say">最后酝酿出了这些可能看起来肉麻兮兮的话，你会不会觉得我油腻呢hhh</span><br>
+                        <span class="say">我不会因为见不到你就对你的感情变淡，你不在我身边的时候我每天都很想你，想见你</span><br>
+			        	<span class="say">我每天都和你说想你，或许很像复读机，但我的每一句想你都包含了我深深的思念，你的突然出现让我牵肠挂肚，割舍不下</span><br>			       
+			        	<span class="say">我挺贪心的，贪心到以后清晨的日出，正午的小憩，又或是漫天星辰的夜晚，我都只想和你度过</span><br>
+			        	<span class="say">我觉得只有真正和你在一起的日子才叫时光，其他的都只是时钟无意义的摆动</span><br>
+			        	<span class="say">开满许多鲜花的地方不一定浪漫，但有你在的地方一定是幸福的</span><br>
+                        <span class="say">情话永远说不完，对你的爱写在我们以后的日子里</span><br>
+						<span class="say">诺诺，我爱你</span><br>
+                        <span class="say"><span class="space"></span>--爱你的小羊</span>
+			        </div>
+                </div>
+                <div id="clock-box">
+                    <span class="STYLE1">今天是</span>小羊 <span class="STYLE1" style="color: red">❤</span> 诺诺<span class="STYLE1" style="color: red">相恋</span>
+                  <div id="clock"></div>
+              </div>
+                <canvas id="canvas" width="1100" height="680"></canvas>
+                <audio id="audio" src="./ANANT-GARDE EYES - 告白.Mp3"></audio>
+            </div>
+            
+        </div>
+       
+        <span id="nuo">诺诺喜欢吗</span><br>
+        <button id="like">&nbsp喜欢&nbsp</button>
+        <button id="floatingButton">不喜欢</button>
+
+    <script>
+    </script>
+
+    <script>
+           var canvas = document.getElementById('canvas');
+    var audio = document.getElementById('audio');
+
+    canvas.addEventListener(
+        'click', function() {
+        audio.play();
+    });
+        	function dt(){
+		var dd = document.getElementById("dd")
+		dd.pause()
+	}
+	function st(){
+		var dd = document.getElementById("dd")
+		dd.play()
+	}
+	function rs(){
+		var dd = document.getElementById("dd")
+		dd.load()
+	}
+    (function(){
+        var canvas = $('#canvas');
+		
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();
+        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+    //    下面修改起始日期
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2024, 1, 4); 			//时间年月日 月份0~11
+		    together.setHours(14);						//小时	
+		    together.setMinutes(22);					//分钟
+		    together.setSeconds(2);					//秒前一位
+		    together.setMilliseconds(2);				//秒第二位
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+        
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const floatingButton = document.getElementById("floatingButton");
+        const maxDrift = 280; // 最大漂移距离，单位为像素
+
+        floatingButton.addEventListener("mouseover", function() {
+            const newLeft = Math.random() * maxDrift - maxDrift / 2;
+            const newTop = Math.random() * maxDrift - maxDrift / 2;
+            floatingButton.style.transform = `translate(${newLeft}px, ${newTop}px)`;
+        });
+
+        floatingButton.addEventListener("click", function() {
+            alert("蛮厉害的嘛，这都被你点到了！");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const likeButton = document.getElementById("like");
+
+        likeButton.addEventListener("click", function() {
+            alert("我也喜欢你(๑•́ ₃ •̀)");
+        });
+    });
+
+    </script>
+    <!-- <iframe src = "./bgm.mp3" allow = "autoplay" hidden /> //自己修改音乐位置 -->
+ 
+
+
+    
+</body>
+</html>
